@@ -15,7 +15,7 @@ void printNumberInDec(int number, char* buffer, size_t bufferSize)
 // Prints a number to a string in hex
 void printNumberInHex(int number, char* buffer, size_t bufferSize)
 {
-    snprintf(buffer, bufferSize, "Number: 0x%x\n", number);
+    snprintf(buffer, bufferSize, "Number: 0x%X\n", number);
 }
 
 // Function that takes a function pointer as an argument and 
