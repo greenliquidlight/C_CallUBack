@@ -10,7 +10,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(self_test self_test.cpp)
-target_link_libraries(self_test gtest_main)
+add_executable(self_test self_test.cpp test_C_Callback.cpp)
+target_link_libraries(self_test gtest_main C_Callback)
 
 add_test(NAME self_test COMMAND self_test)
