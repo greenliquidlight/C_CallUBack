@@ -11,7 +11,7 @@ add_library(C_Callback SHARED)
 target_include_directories(C_Callback PUBLIC include)
 
 # add the sources to the library
-target_sources(C_Callback PRIVATE src/C_Callback.c)
+target_sources(C_Callback PUBLIC src/C_Callback.c)
 
 # Add the tests
 include(CTest)
