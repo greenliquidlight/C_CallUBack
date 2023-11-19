@@ -16,10 +16,10 @@ extern "C" {
 typedef const void (*CallbackFunction)(int, char*, size_t);
 
 // Simple function that prints a number to the console
-DLL_EXPORT void printNumberInDec(int number, char* buffer, size_t bufferSize);
+DLL_EXPORT CallbackFunction printNumberInDec(int number, char* buffer, size_t bufferSize);
 
 // Simple function that prints a number to the console in hex
-DLL_EXPORT void printNumberInHex(int number, char* buffer, size_t bufferSize);
+DLL_EXPORT CallbackFunction printNumberInHex(int number, char* buffer, size_t bufferSize);
 
 // Function that takes a function pointer as an argument and
 // set the callback function to the one passed in

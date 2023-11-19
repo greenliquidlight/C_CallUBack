@@ -26,31 +26,30 @@ TEST(C_Callback, testPrintNumberInHex)
 
 }
 
-// // Test setCallback and runCallback functions
-// void testCallbackFunctions()
-// {
-//     char buffer[100];
-//     int number = 42;
+ // Test setCallback and runCallback functions
+ TEST(C_Callback, testCallbackFunctions)
+ {
+     char buffer[100];
+     int number = 42;
 
-//     // Test when callback function is not set
-//     setCallback(NULL);
-//     runCallback(number, buffer, sizeof(buffer));
-//     printf("Callback Function (NULL): %s\n", buffer);
-//     // Add assertions to check the output
+     // Test when callback function is not set
+     setCallback(NULL);
+     runCallback(number, buffer, sizeof(buffer));
+     printf("Callback Function (NULL): %s\n", buffer);
+     // Add assertions to check the output
+     ASSERT_STREQ(buffer, "No callback function set\n");
 
-//     // Test when callback function is set
-//     // setCallback(printNumberInDec);
-//     runCallback(number, buffer, sizeof(buffer));
-//     printf("Callback Function (printNumberInDec): %s\n", buffer);
-//     // Add assertions to check the output
-// }
+     // Test when callback function is set
+     setCallback((CallbackFunction) printNumberInDec);
+     runCallback(number, buffer, sizeof(buffer));
+     printf("Callback Function (printNumberInDec): %s\n", buffer);
+     // Add assertions to check the output
+     ASSERT_STREQ(buffer, "Number: 42\n");
 
-// TEST(C_Callback, testPrintNumberInHex)
-// {
-//     testPrintNumberInHex();
-// }
-
-// TEST(C_Callback, testCallbackFunctions)
-// {
-//     testCallbackFunctions();
-// }
+     // Test when callback function is set
+     setCallback((CallbackFunction)printNumberInHex);
+     runCallback(number, buffer, sizeof(buffer));
+     printf("Callback Function (printNumberInDec): %s\n", buffer);
+     // Add assertions to check the output
+     ASSERT_STREQ(buffer, "Number: 0x2A\n");
+ }
