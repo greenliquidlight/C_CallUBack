@@ -7,15 +7,15 @@
 static CallbackFunction callbackFunction = NULL;
 
 // Print a number to a string
-void printNumberInDec(int number, char* buffer, size_t bufferSize)
+CallbackFunction printNumberInDec(int number, char* buffer, size_t bufferSize)
 {
     snprintf(buffer, bufferSize, "Number: %d\n", number);
 }
 
 // Prints a number to a string in hex
-void printNumberInHex(int number, char* buffer, size_t bufferSize)
+CallbackFunction printNumberInHex(int number, char* buffer, size_t bufferSize)
 {
-    snprintf(buffer, bufferSize, "Number: 0x%x\n", number);
+    snprintf(buffer, bufferSize, "Number: 0x%X\n", number);
 }
 
 // Function that takes a function pointer as an argument and 
