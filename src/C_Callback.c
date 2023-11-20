@@ -20,7 +20,7 @@ CallbackFunction printNumberInHex(int number, char* buffer, size_t bufferSize)
 
 // Function that takes a function pointer as an argument and 
 // set the callback function to the one passed in
-void setCallback(CallbackFunction callback)
+void registerCallback(CallbackFunction callback)
 {
     callbackFunction = callback;
 }

@@ -33,21 +33,21 @@ TEST(C_Callback, testPrintNumberInHex)
      int number = 42;
 
      // Test when callback function is not set
-     setCallback(NULL);
+     registerCallback(NULL);
      runCallback(number, buffer, sizeof(buffer));
      printf("Callback Function (NULL): %s\n", buffer);
      // Add assertions to check the output
      ASSERT_STREQ(buffer, "No callback function set\n");
 
      // Test when callback function is set
-     setCallback((CallbackFunction) printNumberInDec);
+     registerCallback((CallbackFunction) printNumberInDec);
      runCallback(number, buffer, sizeof(buffer));
      printf("Callback Function (printNumberInDec): %s\n", buffer);
      // Add assertions to check the output
      ASSERT_STREQ(buffer, "Number: 42\n");
 
      // Test when callback function is set
-     setCallback((CallbackFunction)printNumberInHex);
+     registerCallback((CallbackFunction)printNumberInHex);
      runCallback(number, buffer, sizeof(buffer));
      printf("Callback Function (printNumberInDec): %s\n", buffer);
      // Add assertions to check the output

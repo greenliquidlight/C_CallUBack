@@ -23,7 +23,7 @@ DLL_EXPORT CallbackFunction printNumberInHex(int number, char* buffer, size_t bu
 
 // Function that takes a function pointer as an argument and
 // set the callback function to the one passed in
-DLL_EXPORT void setCallback(CallbackFunction callback);
+DLL_EXPORT void registerCallback(CallbackFunction callback);
 
 // Run the callback function with the given number
 DLL_EXPORT void runCallback(int number, char* buffer, size_t bufferSize);
